@@ -7,14 +7,17 @@ import { useInView } from "react-intersection-observer";
 
 const Index = () => {
   const router = useRouter();
-  const projectDescriptionRef = useRef<HTMLDivElement>(null);
-  const [projectSection, setProjectSection] = useState<boolean>(false);
 
   const { ref } = useInView(options);
-  const { ref: secondRef } = useInView(options);
+  const { ref: secondRef } = useInView({
+    threshold: 1,
+    onChange(inView, entry) {
+      // let x = entry
+      animatePortfolioItem(inView, entry);
+    }
+  });
   const { ref: thirdRef } = useInView(options);
-
-  let projectsData: IProjectsData[] = [
+  const [projectsData, setProjectsData] = useState<IProjectsData[]>([
     {
       ref: ref,
       src: "./design-system-main.svg",
@@ -38,15 +41,13 @@ const Index = () => {
         "A product management application to build projects and track the lean development method.",
       showDescription: false
     }
-  ];
+  ]);
 
-  const [projectsDataState, setProjectsDataState] =
-    useState<IProjectsData[]>(projectsData);
   const projectSectionRef = useRef<HTMLDivElement>(null);
 
-  function onMouseOver() {
-    setProjectSection(true);
-    console.log("on mouse over");
+  function handleScroll() {
+    let divScroll = projectSectionRef.current;
+    let total = divScroll!!.scrollLeft + divScroll!!.clientWidth;
   }
 
   function viewHomePage() {
@@ -66,26 +67,22 @@ const Index = () => {
           </div>
         </div>
         <div
-          className="projects-section flex  items-center
+          className=" projects-section flex  items-center
              gap-[120px] mt-[50px] "
           ref={projectSectionRef}
+          onScroll={handleScroll}
         >
-          {projectsDataState?.map((item: IProjectsData, index) => (
-            <div className="mt-[10px] image-container">
-              <img
-                ref={item?.ref}
-                className="image-item"
-                src={item?.src}
-                onMouseOver={onMouseOver}
-              />
-              <div
-                className={`projects-description mt-[70px] mx-auto w-[550px] text-center`}
-              >
-                <p className="text-center text-[24px] font-bold">
-                  {item?.title}
-                </p>
-                <p className=" mt-[18px] font-normal">{item?.description}</p>
-              </div>
+          {projectsData?.map((item: IProjectsData, index) => (
+            <div ref={item?.ref} className="mt-[10px] image-container">
+              <img className="image-item" src={item?.src} />
+              {item?.showDescription && (
+                <div className="mt-[70px] mx-auto w-[550px] text-center">
+                  <p className="text-center text-[24px] font-bold">
+                    {item?.title}
+                  </p>
+                  <p className=" mt-[18px] font-normal">{item?.description}</p>
+                </div>
+              )}
             </div>
           ))}
         </div>

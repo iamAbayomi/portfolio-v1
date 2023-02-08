@@ -19,30 +19,54 @@ const Index = () => {
       ref: ref,
       src: "./design-system-main.svg",
       title: "Design System",
-      description: "A design system to help you build your react components.",
-      showDescription: false
+      description: "A design system to help you build your react components."
     },
     {
       ref: secondRef,
       src: "./open-dao-main.jpg",
       title: " Open DAO Challenge",
       description: `Join the OpenDAO Community to discover, invest in, and vote on
-    exceptional DAOs. You have the power!`,
-      showDescription: false
+    exceptional DAOs. You have the power!`
     },
     {
       ref: thirdRef,
       src: "./spiinge-main.jpg",
       title: "Spiinge",
       description:
-        "A product management application to build projects and track the lean development method.",
-      showDescription: false
+        "A product management application to build projects and track the lean development method."
     }
   ];
 
   const [projectsDataState, setProjectsDataState] =
     useState<IProjectsData[]>(projectsData);
   const projectSectionRef = useRef<HTMLDivElement>(null);
+
+  // useEffect(() => {
+  //   let divScroll = projectSectionRef.current;
+  //   divScroll!!.scrollLeft = 287;
+  // });
+
+  function handleScroll() {
+    let divScroll = projectSectionRef.current;
+    let total = divScroll!!.scrollLeft + divScroll!!.clientWidth;
+    if (total > divScroll!!.scrollWidth) {
+      // setProjectsDataState((previousData) => {
+      //   let tempData = [...previousData];
+      //   tempData[tempData.length + 1] = tempData[0];
+      //   console.log("previousData ", previousData, " tempData ", tempData);
+      //   return tempData;
+      // });
+      //  divScroll!!.scrollLeft = 0;
+    }
+    // console.log(
+    //   "scrollLeft ",
+    //   divScroll!!.scrollLeft,
+    //   "scrollClient",
+    //   divScroll!!.clientWidth,
+    //   "scrollWidth",
+    //   divScroll?.scrollWidth
+    // );
+  }
 
   function onMouseOver() {
     setProjectSection(true);
@@ -69,6 +93,7 @@ const Index = () => {
           className="projects-section flex  items-center
              gap-[120px] mt-[50px] "
           ref={projectSectionRef}
+          onScroll={handleScroll}
         >
           {projectsDataState?.map((item: IProjectsData, index) => (
             <div className="mt-[10px] image-container">
@@ -79,7 +104,9 @@ const Index = () => {
                 onMouseOver={onMouseOver}
               />
               <div
-                className={`projects-description mt-[70px] mx-auto w-[550px] text-center`}
+                className={`projects-description mt-[70px] mx-auto w-[550px] text-center ${
+                  projectSection ? "show" : ""
+                }`}
               >
                 <p className="text-center text-[24px] font-bold">
                   {item?.title}

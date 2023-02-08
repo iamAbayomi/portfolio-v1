@@ -7,6 +7,17 @@ body{
     font-family: 'Fira Sans';
 }
 
+p{
+    font-family: 'Fira Sans' ;
+}
+
 .pointer{
     cursor: pointer;
 }
+
+
+@layer base {
+    html {
+      font-family: 'Fira Sans'
+    }
+  }
