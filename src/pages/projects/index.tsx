@@ -1,40 +1,156 @@
+import { options } from "@/utils/dummyvalues";
+import { IProjectsData } from "@/utils/types";
 import { useRouter } from "next/router";
+import { useRef, useState } from "react";
+import { useInView } from "react-intersection-observer";
 
 const Index = () => {
   const router = useRouter();
+
+  const { ref } = useInView(options);
+  const { ref: secondRef } = useInView(options);
+  const { ref: thirdRef } = useInView(options);
+
+  let projectsData: IProjectsData[] = [
+    {
+      id: 1,
+      ref: ref,
+      src: "./design-system",
+      title: "Design System",
+      description: "A design system to help you build your react components.",
+      showDescription: false,
+      linkToSite: ""
+    },
+    {
+      id: 2,
+      ref: secondRef,
+      src: "./open-dao",
+      title: " Open DAO Challenge",
+      description: `Join the OpenDAO Community to discover, invest in, and vote on
+    exceptional DAOs. You have the power!`,
+      showDescription: false,
+      linkToSite: "https://dao-open-challenge.vercel.app/dao"
+    },
+    {
+      id: 3,
+      ref: thirdRef,
+      src: "./spiinge",
+      title: "Spiinge",
+      description:
+        "A product management application to build projects and track the lean development method.",
+      showDescription: false,
+      linkToSite: ""
+    }
+  ];
+
+  const [projectsDataState, setProjectsDataState] =
+    useState<IProjectsData[]>(projectsData);
+  const projectSectionRef = useRef<HTMLDivElement>(null);
+
   function viewHomePage() {
     router.push("/");
   }
+
+  function viewProjects(item: IProjectsData) {
+    router.push(`${item.linkToSite}`);
+  }
+
+  function nextPortfolio() {
+    const tempProjectsData = projectsDataState;
+    let temp = tempProjectsData[0];
+    let temp2 = tempProjectsData[2];
+    tempProjectsData[0] = tempProjectsData[1];
+    tempProjectsData[2] = temp;
+    tempProjectsData[1] = temp2;
+    setProjectsDataState(JSON.parse(JSON.stringify(tempProjectsData)));
+  }
+
+  function previousPoftfolio() {
+    const tempProjectsData = projectsDataState;
+    let temp = tempProjectsData[0];
+    let temp2 = tempProjectsData[2];
+    tempProjectsData[0] = temp2; //tempProjectsData[2];
+    tempProjectsData[2] = tempProjectsData[1];
+    tempProjectsData[1] = temp; //tempProjectsData[0];
+    setProjectsDataState(JSON.parse(JSON.stringify(tempProjectsData)));
+  }
+
   return (
-    <div>
+    <div className="max-w-[1600px]">
       <div className="bg-black text-white min-h-screen pt-4 px-0 pb-[50px]">
         <div className="flex items-center px-10">
           <p className="text-[42px] font-bold pointer" onClick={viewHomePage}>
             {" "}
             O.A
           </p>
-          <div className="flex ml-[71px] gap-6">
+          <div className="flex ml-[71px] gap-6 pointer">
             <p>Resume</p>
             <p>Blog</p>
           </div>
         </div>
-        <div className="flex justify-center items-center">
-          <img className="h-[320px]" src="./design-system-side.svg" />
-          <div className="mx-auto mt-[100px] max-w-max">
-            <img className="" src="./open-dao-main.jpg" />
-            <div className="mt-[70px] mx-auto max-w-[650px] text-center">
-              <p className="text-center text-[24px] font-bold">
-                Open DAO Challenge
-              </p>
-              <p className=" mt-[18px] font-normal">
-                Join the OpenDAO Community to discover, invest in, and vote on
-                exceptional DAOs. You have the power!
-              </p>
+        <div
+          className="projects-section flex
+             justify-between gap-[0px] mt-[50px] "
+          ref={projectSectionRef}
+        >
+          {projectsDataState?.map((item: IProjectsData, index) => (
+            <div className="flex mt-[40px] items-center">
+              {index == 1 && (
+                <img
+                  src="./backward-arrow.svg"
+                  className="arrow mr-[25px] pointer"
+                  onClick={() =>
+                    setTimeout(() => {
+                      previousPoftfolio();
+                    }, 500)
+                  }
+                />
+              )}
+              <div
+                className={`image-container pointer ${
+                  index == 1 && "center-image-container"
+                }`}
+              >
+                <img
+                  ref={item?.ref}
+                  className={`image-item pointer ${
+                    index == 1 ? "center-image-item" : "side-image"
+                  }`}
+                  onClick={
+                    index == 1
+                      ? () => viewProjects(item)
+                      : index == 0
+                      ? () => previousPoftfolio()
+                      : () => nextPortfolio()
+                  }
+                  src={`${item?.src}-${index == 1 ? "main.jpg" : "side.svg"}`}
+                />
+                <div
+                  className={`projects-description mt-[70px] mx-auto w-[550px] text-center ${
+                    index == 1 ? " block " : "hidden"
+                  }`}
+                >
+                  <p className="text-center text-[24px] font-bold">
+                    {item?.title}
+                  </p>
+                  <p className=" mt-[18px] font-normal">{item?.description}</p>
+                </div>
+              </div>
+              {index == 1 && (
+                <img
+                  src="./forward-arrow.svg"
+                  className="arrow ml-[25px] pointer"
+                  onClick={() =>
+                    setTimeout(() => {
+                      nextPortfolio();
+                    }, 500)
+                  }
+                />
+              )}
             </div>
-          </div>
-          <img className="h-[320px]" src="./spiinge-side.jpg" />
+          ))}
         </div>
-        <div className="flex mt-[120px] max-w-max m-auto gap-[60px]">
+        <div className="flex mt-[120px] max-w-max m-auto gap-[60px] pointer">
           <p>LinkedIn</p>
           <p>GitHub</p>
           <p>Mail</p>

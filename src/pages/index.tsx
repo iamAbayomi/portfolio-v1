@@ -9,16 +9,19 @@ export default function Home() {
 
   return (
     <>
-      <div className="bg-black text-white min-h-screen pt-4 px-10">
-        <div className="flex items-center">
+      <div className="bg-black text-white min-h-screen pt-4 pb-[80px] px-10">
+        <div className="flex items-center pointer">
           <p className=" text-[42px] font-bold"> O.A</p>
           <div className="flex ml-[71px] gap-6">
             <p>Resume</p>
             <p>Blog</p>
           </div>
         </div>
-        <div className=" mt-[120px] mx-[138px] flex justify-between">
-          <div className="max-w-lg ">
+        <div
+          className=" mt-[120px] mx-[20px] lg:mx-[138px] flex justify-between 
+            gap-[90px] flex-col lg:flex-row items-center"
+        >
+          <div className="max-w-lg">
             <p className="text-[64px] font-bold font-['Fira Sans']">
               Hi,
               <br /> I am Abayomi

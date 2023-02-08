@@ -1,0 +1,59 @@
+.projects-section{
+    padding: 20px 0px 0px 0px;
+    width: 100vw;
+    margin: auto;
+    overflow: scroll;
+    box-sizing: border-box;
+}
+
+.arrow{
+    margin-bottom: 90px;
+    width: 20px;
+    transition: width 0.3s; 
+}
+
+.arrow:hover{
+    width: 30px;
+}
+
+
+.image-container{
+    /* width: 520px;
+    transition: width 2s; */
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+}
+
+.image-item{
+    width: 520px;
+    max-width: 520px;
+    transition: width 1s 0.2s, max-width 1s 0.2s;
+}
+
+
+.projects-description:hover{
+    display: block;
+}
+
+.show{
+    display: block;
+}
+
+.center-image-container{
+    width: 700px;
+
+}
+
+
+
+.center-image-item{
+    width: 700px;
+    max-width: 700px;
+    transition: background-image 5s ease-in-out;
+}
+
+.side-image{
+    margin-top: 150px;
+    height: 320px;
+    width: 100%;
+}
