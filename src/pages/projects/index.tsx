@@ -154,7 +154,7 @@ const Index = () => {
         </div>
 
         <div
-          className="flex mt-[120px] flex-row
+          className="footer flex mt-[120px] flex-row
          max-w-max m-auto gap-[10px] sm:gap-[60px] pointer"
         >
           <p>LinkedIn</p>
