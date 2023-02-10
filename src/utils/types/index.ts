@@ -7,3 +7,8 @@ export interface IProjectsData  {
     showDescription?: boolean
     linkToSite?: string
 }
+
+export interface ISocialLink{
+    name: string,
+    link: string
+}

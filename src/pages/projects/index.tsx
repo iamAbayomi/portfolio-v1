@@ -1,5 +1,5 @@
 import { resumeLink } from "@/utils/constant";
-import { options } from "@/utils/dummyvalues";
+import { footerLink, options } from "@/utils/dummyvalues";
 import { IProjectsData } from "@/utils/types";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -8,6 +8,7 @@ import { useInView } from "react-intersection-observer";
 
 const Index = () => {
   const router = useRouter();
+  //const link =
 
   const { ref } = useInView(options);
   const { ref: secondRef } = useInView(options);
@@ -163,10 +164,11 @@ const Index = () => {
           className="footer flex mt-[120px] flex-row
          max-w-max m-auto gap-[10px] sm:gap-[60px] pointer"
         >
-          <p>LinkedIn</p>
-          <p>GitHub</p>
-          <p>Mail</p>
-          <p>Twitter</p>
+          {footerLink?.map((item) => (
+            <Link href={item?.link} target={item?.link}>
+              <p>{item.name}</p>
+            </Link>
+          ))}
         </div>
       </div>
     </div>
