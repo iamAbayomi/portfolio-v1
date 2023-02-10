@@ -1,6 +1,5 @@
 .projects-section{
     padding: 20px 0px 0px 0px;
-    width: 100vw;
     margin: auto;
     overflow: scroll;
     box-sizing: border-box;
@@ -16,20 +15,16 @@
     width: 30px;
 }
 
-
 .image-container{
-    /* width: 520px;
-    transition: width 2s; */
     -webkit-backface-visibility: hidden; /* Safari */
     backface-visibility: hidden;
 }
 
 .image-item{
-    width: 520px;
+    width: 100%;
     max-width: 520px;
     transition: width 1s 0.2s, max-width 1s 0.2s;
 }
-
 
 .projects-description:hover{
     display: block;
@@ -40,14 +35,11 @@
 }
 
 .center-image-container{
-    width: 700px;
-
+    width: 100%;
 }
 
-
-
 .center-image-item{
-    width: 700px;
+    width: 100%;
     max-width: 700px;
     transition: background-image 5s ease-in-out;
 }
@@ -56,4 +48,58 @@
     margin-top: 150px;
     height: 320px;
     width: 100%;
+}
+
+
+@media screen and (max-width: 1026px){
+    
+    /* .projects-container{
+        max-width: 450px;
+    } */
+
+    .image-container{
+        max-width: 400px;
+        margin: auto;
+        width: 100%;
+    }
+
+    .image-item{
+        max-width: 400px;
+        width: 100%;
+    }
+    .arrow{
+        width: 10px;
+    }
+    .center-image-item{
+        max-width: 400px;
+    }
+}
+
+
+@media screen and (max-width: 700px) {
+    .center-image-item{
+        max-width: 400px;
+    }
+    .side-image{
+        height: 90px;
+    }
+}
+
+
+@media screen and (max-width:553px) {
+    .projects-description {
+       display: none;
+    }
+    .arrow{
+        margin-bottom: 0px;
+    }
+    .center-image-item{
+        max-width: 300px;
+    }
+    .side-image{
+        height: 90px;
+    }
+    .arrow:hover{
+        width: 22px;
+    }
 }
