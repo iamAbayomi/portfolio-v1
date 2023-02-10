@@ -1,5 +1,6 @@
 import { options } from "@/utils/dummyvalues";
 import { IProjectsData } from "@/utils/types";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import { useRef, useState } from "react";
 import { useInView } from "react-intersection-observer";
@@ -85,7 +86,9 @@ const Index = () => {
           </p>
           <div className="flex ml-[71px] gap-6 pointer">
             <p>Resume</p>
-            <p>Blog</p>
+            <Link href={"https://blog.oladiniabayomi.com/"} target={"_blank"}>
+              <p>Blog</p>
+            </Link>
           </div>
         </div>
         <div
