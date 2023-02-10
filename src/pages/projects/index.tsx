@@ -94,11 +94,11 @@ const Index = () => {
           ref={projectSectionRef}
         >
           {projectsDataState?.map((item: IProjectsData, index) => (
-            <div className="flex mt-[40px] items-center">
+            <div className="projects-container flex mt-[40px] items-center">
               {index == 1 && (
                 <img
                   src="./backward-arrow.svg"
-                  className="arrow mr-[25px] pointer"
+                  className="arrow mx-[10px] sm:mx-[1.56rem] pointer"
                   onClick={() =>
                     setTimeout(() => {
                       previousPoftfolio();
@@ -126,20 +126,22 @@ const Index = () => {
                   src={`${item?.src}-${index == 1 ? "main.jpg" : "side.svg"}`}
                 />
                 <div
-                  className={`projects-description mt-[70px] mx-auto w-[550px] text-center ${
+                  className={`projects-description mt-[70px] mx-auto max-w-[550px] text-center ${
                     index == 1 ? " block " : "hidden"
                   }`}
                 >
-                  <p className="text-center text-[24px] font-bold">
+                  <p className="text-center lg:text-[1.5rem]  font-bold">
                     {item?.title}
                   </p>
-                  <p className=" mt-[18px] font-normal">{item?.description}</p>
+                  <p className=" mt-[1.125rem] text-[0.8125rem] lg:text-[1.125rem] font-normal">
+                    {item?.description}
+                  </p>
                 </div>
               </div>
               {index == 1 && (
                 <img
                   src="./forward-arrow.svg"
-                  className="arrow ml-[25px] pointer"
+                  className="arrow mx-[10px] sm:mx-[1.56rem]  pointer"
                   onClick={() =>
                     setTimeout(() => {
                       nextPortfolio();
@@ -150,7 +152,11 @@ const Index = () => {
             </div>
           ))}
         </div>
-        <div className="flex mt-[120px] max-w-max m-auto gap-[60px] pointer">
+
+        <div
+          className="flex mt-[120px] flex-row
+         max-w-max m-auto gap-[10px] sm:gap-[60px] pointer"
+        >
           <p>LinkedIn</p>
           <p>GitHub</p>
           <p>Mail</p>
