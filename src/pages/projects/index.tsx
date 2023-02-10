@@ -1,3 +1,4 @@
+import { resumeLink } from "@/utils/constant";
 import { options } from "@/utils/dummyvalues";
 import { IProjectsData } from "@/utils/types";
 import Link from "next/link";
@@ -85,7 +86,9 @@ const Index = () => {
             O.A
           </p>
           <div className="flex ml-[71px] gap-6 pointer">
-            <p>Resume</p>
+            <Link href={resumeLink} target={"_blank"}>
+              <p>Resume</p>
+            </Link>
             <Link href={"https://blog.oladiniabayomi.com/"} target={"_blank"}>
               <p>Blog</p>
             </Link>
