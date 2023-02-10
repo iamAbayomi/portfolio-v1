@@ -88,7 +88,11 @@
 
 @media screen and (max-width:553px) {
     .projects-description {
-       display: none;
+       /* display: none; */
+       max-width: 300px;
+       position: absolute;
+       left: 0;
+       right: 0;
     }
     .arrow{
         margin-bottom: 0px;
@@ -101,5 +105,12 @@
     }
     .arrow:hover{
         width: 22px;
+    }
+    .footer{
+        position: absolute;
+        margin: auto;
+        left: 0px;
+        right: 0px;
+        bottom: 30px;
     }
 }
