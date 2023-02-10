@@ -41,12 +41,12 @@
 .center-image-item{
     width: 100%;
     max-width: 700px;
-    transition: background-image 5s ease-in-out;
+    transition: background-image 1s linear;
 }
 
 .side-image{
     margin-top: 150px;
-    height: 320px;
+    width: 320px;
     width: 100%;
 }
 
@@ -87,7 +87,7 @@
         max-width: 350px;
     }
     .side-image{
-        height: 150px;
+        width: 200px;
     }
     .footer{
         position: absolute;
@@ -104,7 +104,7 @@
         max-width: 300px;
     }
     .side-image{
-        height: 120px;
+        width: 70px;
     }
 }
 
