@@ -29,7 +29,7 @@ const Index = () => {
       description: `Join the OpenDAO Community to discover, invest in, and vote on
     exceptional DAOs. You have the power!`,
       showDescription: false,
-      linkToSite: "https://dao-open-challenge.vercel.app/dao"
+      linkToSite: "https://dao-open-challenge.vercel.app/"
     },
     {
       id: 3,
@@ -52,7 +52,7 @@ const Index = () => {
   }
 
   function viewProjects(item: IProjectsData) {
-    router.push(`${item.linkToSite}`);
+    window.open(`${item.linkToSite}`, "_newtab");
   }
 
   function nextPortfolio() {
