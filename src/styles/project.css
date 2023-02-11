@@ -116,6 +116,9 @@
     .side-image{
         width: 70px;
     }
+    .footer{
+        bottom: 30px;
+    }
 }
 
    /* .projects-container{
