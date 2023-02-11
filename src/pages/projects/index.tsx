@@ -22,7 +22,7 @@ const Index = () => {
       title: "Design System",
       description: "A design system to help you build your react components.",
       showDescription: false,
-      linkToSite: ""
+      linkToSite: "https://github.com/iamAbayomi/a-component-library"
     },
     {
       id: 2,
@@ -79,7 +79,7 @@ const Index = () => {
   }
 
   return (
-    <div className="max-w-[1600px]">
+    <div className="">
       <div className="bg-black text-white min-h-screen pt-4 px-0 pb-[50px]">
         <div className="flex items-center px-10">
           <p className="text-[42px] font-bold pointer" onClick={viewHomePage}>
