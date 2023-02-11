@@ -1,3 +1,5 @@
+import { resumeLink } from "@/utils/constant";
+import Link from "next/link";
 import { useRouter } from "next/router";
 
 export default function Home() {
@@ -12,9 +14,13 @@ export default function Home() {
       <div className="bg-black text-white min-h-screen pt-4 pb-[80px] px-10">
         <div className="flex items-center pointer">
           <p className=" text-[42px] font-bold"> O.A</p>
-          <div className="flex ml-[71px] gap-6">
-            <p>Resume</p>
-            <p>Blog</p>
+          <div className="flex ml-[71px] gap-6 pointer">
+            <Link href={resumeLink} target={"_blank"}>
+              <p>Resume</p>
+            </Link>
+            <Link href={"https://blog.oladiniabayomi.com/"} target={"_blank"}>
+              <p>Blog</p>
+            </Link>
           </div>
         </div>
         <div
@@ -32,12 +38,13 @@ export default function Home() {
               applications from zero to thousands of users and built products
               that generated millions in revenue.
             </p>
-            <div
-              className="bg-[#1560D7] mt-[40px] max-w-max py-[12px] px-[40px] rounded-[20px] pointer"
+            <button
+              className="bg-[#1560D7]  mt-[40px]  max-w-max py-[12px]
+               px-[40px] rounded-[20px] pointer view-projects"
               onClick={viewProjects}
             >
               View Projects
-            </div>
+            </button>
           </div>
           <div>
             <img className="mt-[40px]" src="./avatar.svg" />
