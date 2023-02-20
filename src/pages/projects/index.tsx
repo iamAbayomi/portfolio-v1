@@ -22,7 +22,8 @@ const Index = () => {
       title: "Design System",
       description: "A design system to help you build your react components.",
       showDescription: false,
-      linkToSite: "https://github.com/iamAbayomi/a-component-library"
+      linkToSite:
+        "https://6207da00fd8970003a4b561e-qngsmazzda.chromatic.com/?path=/story/design-system-avatar--primary"
     },
     {
       id: 2,
@@ -42,7 +43,7 @@ const Index = () => {
       description:
         "A product management application to build projects and track the lean development method.",
       showDescription: false,
-      linkToSite: ""
+      linkToSite: "https://github.com/iamAbayomi/kms"
     }
   ];
 
