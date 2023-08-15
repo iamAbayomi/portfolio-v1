@@ -33,7 +33,7 @@
 .image-item{
     width: 100%;
     max-width: 520px;
-    transition: width 1s 0.2s, max-width 1s 0.2s;
+    /* transition: width 1s 0.2s, max-width 1s 0.2s; */
 }
 
 .projects-description:hover{
@@ -51,7 +51,7 @@
 .center-image-item{
     width: 100%;
     max-width: 700px;
-    transition: background-image 1s linear;
+    /* transition: background-image 1s linear; */
 }
 
 .side-image{
