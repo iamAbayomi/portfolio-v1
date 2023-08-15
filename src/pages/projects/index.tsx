@@ -131,7 +131,7 @@ const Index = () => {
                       ? () => previousPoftfolio()
                       : () => nextPortfolio()
                   }
-                  src={`${item?.src}-${index == 1 ? "main.jpg" : "side.jpg"}`}
+                  src={`${item?.src}-${index == 1 ? "main.svg" : "side.svg"}`}
                 />
                 <div
                   className={`projects-description mt-[70px] mx-auto max-w-[550px] text-center ${
