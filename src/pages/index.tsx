@@ -84,11 +84,11 @@ export default function Home() {
               </button>
             </div>
             <div>
-              <img className="mt-[40px]" src="./avatar.svg" />
+              <img className="my-[40px]" src="./avatar.svg" />
             </div>
           </div>
         </div>
-        <div ref={triggerRef} className="mt-[40px]">
+        <div ref={triggerRef} className="mt-[80px]">
           <div className="mt-[0px] text-[white] text-center text-[24px] ">
             Projects
           </div>
