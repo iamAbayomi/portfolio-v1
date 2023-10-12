@@ -96,7 +96,7 @@ export default function Home() {
             <div>
               <div
                 ref={sectionRef}
-                className="flex justify-between items-center gap-[40px]  w-[300vw] h-[100vh]"
+                className="flex justify-between items-center gap-[40px] w-[300vw] h-[100vh]"
               >
                 {projectsData?.map((item: IProjectsData, index) => (
                   <a
@@ -106,11 +106,17 @@ export default function Home() {
                     target="_blank"
                   >
                     <div
-                      className="flex mt-[0px] sm:justify-between gap-[40px] !w-[100vw]
+                      className="flex mt-[0px] sm:justify-between gap-[60px]  w-max
                          items-start sm:items-center sm:mx-[40px] max-sm:flex-col-reverse"
                     >
+                      <img
+                        ref={item?.ref}
+                        className={`image-item pointer center-image-item
+                        mx-auto w-[100%] max-w-[100vw]  sm:!h-[100vh] `}
+                        src={`${item?.src}-main.svg`}
+                      />
                       <div
-                        className={`mt-[60px] mx-auto  w-[100%] max-w-[550px]
+                        className={`mt-[60px] mx-auto w-[100%] max-w-[450px]
                          max-sm:px-[10px] text-center sm:text-left`}
                       >
                         <p className="lg:text-[1.5rem]  font-bold">
@@ -123,12 +129,6 @@ export default function Home() {
                           {item?.description}
                         </p>
                       </div>
-                      <img
-                        ref={item?.ref}
-                        className={`image-item pointer center-image-item
-                        mx-auto w-[100%] max-w-[100vw]  sm:!h-[100vh] `}
-                        src={`${item?.src}-main.svg`}
-                      />
                     </div>
                   </a>
                 ))}

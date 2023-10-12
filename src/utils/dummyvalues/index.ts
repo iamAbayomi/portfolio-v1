@@ -31,29 +31,49 @@ export const footerLink: ISocialLink[]  = [{
 export const projectsData: IProjectsData[] = [
   {
     id: 1,
-    src: "./design-system",
-    title: "Design System",
-    description: "A design system to help you build your react components.",
-    showDescription: false,
-    linkToSite:
-      "https://6207da00fd8970003a4b561e-qngsmazzda.chromatic.com/?path=/story/design-system-avatar--primary"
+    src: "./tiber-aii",
+    title: "Tiber AI",
+    description: `Get AI-driven market insights in minutes not weeks to stay ahead of the game and market trends.`,
+    showDescription: false, 
+    linkToSite: "https://tiber.ai/"
   },
   {
     id: 2,
-    src: "./open-dao",
-    title: " Open DAO Challenge",
-    description: `Join the OpenDAO Community to discover, invest in, and vote on
-  exceptional DAOs. You have the power!`,
+    src: "./sendme",
+    title: "Sendme",
+    description:
+      "Focus on the things that matter while we handle your animal protein needs by giving you premium quality meat at the best prices.",
     showDescription: false,
-    linkToSite: "https://dao-open-challenge.vercel.app/"
+    linkToSite: "https://www.sendme.ng/"
   },
   {
     id: 3,
-    src: "./spiinge",
-    title: "Spiinge",
-    description:
-      "A product management application to build projects and track the lean development method.",
+    src: "./open-dao",
+    title: " Open DAO Challenge",
+    description: `Join the OpenDAO Community to discover, invest in, and vote on
+    exceptional DAOs. You have the power!`,
     showDescription: false,
-    linkToSite: "https://github.com/iamAbayomi/kms"
-  }
+    linkToSite: "https://dao-open-challenge.vercel.app/"
+  },
+  // {
+  //   id: 3,
+  //   src: "./design-system",
+  //   title: "Design System",
+  //   description: "A design system to help you build your react components.",
+  //   showDescription: false,
+  //   linkToSite:
+  //     "https://6207da00fd8970003a4b561e-qngsmazzda.chromatic.com/?path=/story/design-system-avatar--primary"
+  // },
+ 
+  // {
+  //   id: 4,
+  //   src: "./spiinge",
+  //   title: "Spiinge",
+  //   description:
+  //     "A product management application to build projects and track the lean development method.",
+  //   showDescription: false,
+  //   linkToSite: "https://github.com/iamAbayomi/kms"
+  // },
+  
 ];
+
