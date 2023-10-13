@@ -23,9 +23,9 @@ export default function Home() {
       sectionRef.current,
 
       {
-        translateX: "-250vw",
+        translateX: "-210vw",
         ease: "linear",
-        duration: 1,
+        duration: 2,
         scrollTrigger: {
           trigger: triggerRef.current,
           //trigger: sectionRef.current,
@@ -71,9 +71,9 @@ export default function Home() {
               </p>
               <p className="mt-8 leading-[30px] font-light">
                 Experienced Front-End Developer with over 5 years of experience
-                building web applications with React, Next.js and TypeScript. I have scaled
-                applications from zero to thousands of users and built products
-                that generated millions in revenue.
+                building web applications with React, Next.js and TypeScript. I
+                have scaled applications from zero to thousands of users and
+                built products that generated millions in revenue.
               </p>
               <button
                 className="bg-[#1560D7]  mt-[40px]  max-w-max py-[12px]
@@ -90,7 +90,7 @@ export default function Home() {
         </div>
         <div ref={triggerRef} className="mt-[80px]">
           <div className="mt-[0px] text-[white] text-center text-[24px] ">
-            Projects
+            Work
           </div>
           <div className="overflow-hidden w-[100%] max-w-[100vw]">
             <div>
