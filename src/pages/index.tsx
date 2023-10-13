@@ -70,8 +70,8 @@ export default function Home() {
                 <br /> I am Abayomi
               </p>
               <p className="mt-8 leading-[30px] font-light">
-                Experienced Front-End Developer with over 4 years of experience
-                building web applications with React and Vue.js. I have scaled
+                Experienced Front-End Developer with over 5 years of experience
+                building web applications with React, Next.js and TypeScript. I have scaled
                 applications from zero to thousands of users and built products
                 that generated millions in revenue.
               </p>
