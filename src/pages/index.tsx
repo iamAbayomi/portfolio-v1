@@ -106,12 +106,12 @@ export default function Home() {
                     target="_blank"
                   >
                     <div
-                      className="flex mt-[0px] sm:justify-between gap-[60px]  w-max
-                         items-start sm:items-center sm:mx-[40px] max-sm:flex-col-reverse"
+                      className="flex mt-[0px] sm:justify-between gap-[60px] 
+                         items-start sm:items-center sm:mx-[40px] max-sm:flex-col"
                     >
                       <img
                         ref={item?.ref}
-                        className={`image-item pointer center-image-item
+                        className={`image-item pointer center-image-item w-max shadow-xl
                         mx-auto w-[100%] max-w-[100vw]  sm:!h-[100vh] `}
                         src={`${item?.src}-main.svg`}
                       />
