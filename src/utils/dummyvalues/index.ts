@@ -27,7 +27,7 @@ export const footerLink: ISocialLink[]  = [{
 }
 ]
 
-
+ 
 export const projectsData: IProjectsData[] = [
   {
     id: 1,
