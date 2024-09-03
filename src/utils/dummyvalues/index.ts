@@ -31,6 +31,14 @@ export const footerLink: ISocialLink[]  = [{
 export const projectsData: IProjectsData[] = [
   {
     id: 1,
+    src: "./kole",
+    title: "Kole",
+    description: `At Kólé, we are committed to transforming resource utilization in the construction industry. Our mission is to empower construction companies and other stakeholders to minimize construction waste and debris, fostering a more profitable and sustainable approach to construction.`,
+    showDescription: false, 
+    linkToSite: "https://getkole.co/"
+  },
+  {
+    id: 2,
     src: "./tiber-aii",
     title: "Tiber AI",
     description: `Get AI-driven market insights in minutes not weeks to stay ahead of the game and market trends.`,
@@ -38,7 +46,7 @@ export const projectsData: IProjectsData[] = [
     linkToSite: "https://tiber.ai/"
   },
   {
-    id: 2,
+    id: 3,
     src: "./sendme",
     title: "Sendme",
     description:
@@ -47,7 +55,7 @@ export const projectsData: IProjectsData[] = [
     linkToSite: "https://www.sendme.ng/"
   },
   {
-    id: 3,
+    id: 4,
     src: "./open-dao",
     title: " Open DAO Challenge",
     description: `Join the OpenDAO Community to discover, invest in, and vote on
