@@ -23,9 +23,9 @@ export default function Home() {
       sectionRef.current,
 
       {
-        translateX: "-250vw",
+        translateX: "-310vw",
         ease: "linear",
-        duration: 1,
+        duration: 2,
         scrollTrigger: {
           trigger: triggerRef.current,
           //trigger: sectionRef.current,
@@ -70,10 +70,10 @@ export default function Home() {
                 <br /> I am Abayomi
               </p>
               <p className="mt-8 leading-[30px] font-light">
-                Experienced Front-End Developer with over 4 years of experience
-                building web applications with React and Vue.js. I have scaled
-                applications from zero to thousands of users and built products
-                that generated millions in revenue.
+                Experienced Front-End Developer with over 5 years of experience
+                building web applications with React, Next.js and TypeScript. I
+                have scaled applications from zero to thousands of users and
+                built products that generated millions in revenue.
               </p>
               <button
                 className="bg-[#1560D7]  mt-[40px]  max-w-max py-[12px]
@@ -84,33 +84,39 @@ export default function Home() {
               </button>
             </div>
             <div>
-              <img className="mt-[40px]" src="./avatar.svg" />
+              <img className="my-[40px]" src="./avatar.svg" />
             </div>
           </div>
         </div>
-        <div ref={triggerRef} className="mt-[40px]">
+        <div ref={triggerRef} className="mt-[80px]">
           <div className="mt-[0px] text-[white] text-center text-[24px] ">
-            Projects
+            Work
           </div>
           <div className="overflow-hidden w-[100%] max-w-[100vw]">
             <div>
               <div
                 ref={sectionRef}
-                className="flex justify-between items-center gap-[40px]  w-[300vw] h-[100vh]"
+                className="flex justify-between items-center gap-[40px] w-[400vw] h-[100vh]"
               >
                 {projectsData?.map((item: IProjectsData, index) => (
                   <a
                     key={index}
                     href={item.linkToSite}
-                    className=""
+                    className="w-full border-[red] border-2"
                     target="_blank"
                   >
                     <div
-                      className="flex mt-[0px] sm:justify-between gap-[40px] !w-[100vw]
-                         items-start sm:items-center sm:mx-[40px] max-sm:flex-col-reverse"
+                      className="flex mt-[0px] w-full sm:justify-between gap-[60px] 
+                         items-start sm:items-center sm:mx-[40px] max-sm:flex-col"
                     >
+                      <img
+                        ref={item?.ref}
+                        className={`image-item pointer center-image-item w-max shadow-xl
+                        mx-auto w-[100%] max-w-[100vw]  sm:!h-[100vh] `}
+                        src={`${item?.src}-main.svg`}
+                      />
                       <div
-                        className={`mt-[60px] mx-auto  w-[100%] max-w-[550px]
+                        className={`mt-[60px] mx-auto w-[100%] max-w-[450px]
                          max-sm:px-[10px] text-center sm:text-left`}
                       >
                         <p className="lg:text-[1.5rem]  font-bold">
@@ -123,12 +129,6 @@ export default function Home() {
                           {item?.description}
                         </p>
                       </div>
-                      <img
-                        ref={item?.ref}
-                        className={`image-item pointer center-image-item
-                        mx-auto w-[100%] max-w-[100vw]  sm:!h-[100vh] `}
-                        src={`${item?.src}-main.svg`}
-                      />
                     </div>
                   </a>
                 ))}
