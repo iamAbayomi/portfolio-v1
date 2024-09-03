@@ -102,7 +102,7 @@ export default function Home() {
                   <a
                     key={index}
                     href={item.linkToSite}
-                    className="w-full border-[red] border-2"
+                    className="w-full"
                     target="_blank"
                   >
                     <div
