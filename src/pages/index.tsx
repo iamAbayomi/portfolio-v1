@@ -23,7 +23,7 @@ export default function Home() {
       sectionRef.current,
 
       {
-        translateX: "-210vw",
+        translateX: "-310vw",
         ease: "linear",
         duration: 2,
         scrollTrigger: {
@@ -96,17 +96,17 @@ export default function Home() {
             <div>
               <div
                 ref={sectionRef}
-                className="flex justify-between items-center gap-[40px] w-[300vw] h-[100vh]"
+                className="flex justify-between items-center gap-[40px] w-[400vw] h-[100vh]"
               >
                 {projectsData?.map((item: IProjectsData, index) => (
                   <a
                     key={index}
                     href={item.linkToSite}
-                    className=""
+                    className="w-full border-[red] border-2"
                     target="_blank"
                   >
                     <div
-                      className="flex mt-[0px] sm:justify-between gap-[60px] 
+                      className="flex mt-[0px] w-full sm:justify-between gap-[60px] 
                          items-start sm:items-center sm:mx-[40px] max-sm:flex-col"
                     >
                       <img
