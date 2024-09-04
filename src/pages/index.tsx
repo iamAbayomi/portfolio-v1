@@ -57,6 +57,9 @@ export default function Home() {
             <Link href={"https://blog.oladiniabayomi.com/"} target={"_blank"}>
               <p>Blog</p>
             </Link>
+            <Link href={"./projects"} target={"_blank"}>
+              <p>Projects</p>
+            </Link>
           </div>
         </div>
         <div className="h-[100vh] mb-[40px]">
